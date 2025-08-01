@@ -1,1 +1,1 @@
-// Em breve: painel administrativo
+// Scripts de controle do painel administrativo
