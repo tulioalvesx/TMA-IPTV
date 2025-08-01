@@ -41,6 +41,7 @@
       gap: 20px;
     }
     .produto-img {
+      overflow: hidden;
       flex: 1 1 300px;
       max-width: 300px;
       position: relative;
@@ -204,10 +205,7 @@
                 <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
                 <a class="btn" href="${produto.download}" target="_blank">Download</a>
               </div>
-              <div>
-                <h4>Descrição</h4>
-                <p>${produto.descricao_detalhada || 'Em breve mais informações sobre este produto.'}</p>
-              </div>
+              
             </div>
           `;
 
