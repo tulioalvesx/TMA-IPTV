@@ -187,27 +187,30 @@
           const imgSrc = `assets/${nomeImg}.jpg`;
 
           card.innerHTML = `
-            <div class="produto-img">
-              <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
-              ${badge}
-            </div>
-            <div class="produto-info">
-              <h3>${produto.nome}</h3>
-              <p>${produto.descricao}</p>
-              <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
-              <div class="quantidade">
-                <label>Quantidade:</label>
-                <button onclick="this.nextElementSibling.stepDown()">-</button>
-                <input type="number" id="qtd-${produto.id}" value="1" min="1">
-                <button onclick="this.previousElementSibling.stepUp()">+</button>
-              </div>
-              <div class="btn-group">
-                <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
-                <a class="btn" href="${produto.download}" target="_blank">Download</a>
-              </div>
-              
-            </div>
-          `;
+<div class="produto-img">
+  <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
+  ${badge}
+</div>
+<div class="produto-info">
+  <h3>${produto.nome}</h3>
+  <p>${produto.descricao}</p>
+  <div class="produto-descricao-custom" style="margin: 10px 0; padding: 10px; background: #f1f1f1; border-radius: 6px;">
+    <strong>Descrição:</strong>
+    <p>${produto.descricao_custom || 'Descreva este produto aqui.'}</p>
+  </div>
+  <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+  <div class="quantidade">
+    <label>Quantidade:</label>
+    <button onclick="this.nextElementSibling.stepDown()">-</button>
+    <input type="number" id="qtd-${produto.id}" value="1" min="1">
+    <button onclick="this.previousElementSibling.stepUp()">+</button>
+  </div>
+  <div class="btn-group">
+    <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
+    <a class="btn" href="${produto.download}" target="_blank">Download</a>
+  </div>
+</div>
+`;
 
           container.appendChild(card);
         });
