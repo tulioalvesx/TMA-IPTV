@@ -18,17 +18,43 @@
     </nav>
   </header>
 
-  <main id="product-list">
-    <!-- Produtos serão carregados aqui via JS -->
+  <main id="group-list">
+    <!-- Grupos de produtos serão carregados aqui via JS -->
   </main>
 
   <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
-    <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';"/>
   </a>
 
   <div id="chatbot"></div>
 
-  <script src="js/produto.js"></script>
-  <script src="js/chatbot.js"></script>
+  <script>
+    fetch('grupos.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('group-list');
+        data.forEach(group => {
+          const card = document.createElement('div');
+          card.className = 'product-group';
+          card.innerHTML = `
+            <h2>${group.nome}</h2>
+            <a href="produto.html?grupo=${encodeURIComponent(group.id)}" class="btn">Ver detalhes</a>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar grupos:', error);
+      });
+
+    fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
+      .then(r => r.json())
+      .then(d => {
+        if (d.result !== "failed") {
+          document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
+        }
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>
