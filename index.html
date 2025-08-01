@@ -38,13 +38,11 @@
           card.className = 'product-group';
           card.innerHTML = `
             <h2>${group.nome}</h2>
+            <img src="${group.imagem}" alt="${group.nome}" style="max-width:200px;">
             <a href="produto.html?grupo=${encodeURIComponent(group.id)}" class="btn">Ver detalhes</a>
           `;
           container.appendChild(card);
         });
-      })
-      .catch(error => {
-        console.error('Erro ao carregar grupos:', error);
       });
 
     fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
@@ -53,8 +51,7 @@
         if (d.result !== "failed") {
           document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
         }
-      })
-      .catch(() => {});
+      });
   </script>
 </body>
 </html>

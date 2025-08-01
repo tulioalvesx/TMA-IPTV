@@ -1,21 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produto - TMA IPTV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes do Produto</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="downloads.html">Downloads</a>
-      <a href="painel.html">Painel</a>
-    </nav>
+    <h1>Detalhes do Produto</h1>
+    <a href="index.html">← Voltar</a>
   </header>
-  <main id="produto-detalhes"></main>
-  <script src="js/produto.js"></script>
+  <main id="product-detail"></main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const grupoId = urlParams.get('grupo');
+
+    Promise.all([
+      fetch('grupos.json').then(r => r.json()),
+      fetch('produtos.json').then(r => r.json())
+    ]).then(([grupos, produtos]) => {
+      const grupo = grupos.find(g => g.id === grupoId);
+      const container = document.getElementById('product-detail');
+      if (!grupo) {
+        container.innerHTML = '<p>Grupo não encontrado.</p>';
+        return;
+      }
+
+      const header = document.createElement('h2');
+      header.textContent = grupo.nome;
+      container.appendChild(header);
+
+      const img = document.createElement('img');
+      img.src = grupo.imagem;
+      img.style.maxWidth = "250px";
+      container.appendChild(img);
+
+      const items = produtos.filter(p => p.grupoId === grupoId);
+      if (items.length === 0) {
+        container.innerHTML += "<p>Nenhum produto disponível.</p>";
+      } else {
+        items.forEach(p => {
+          const box = document.createElement('div');
+          box.className = 'produto-card';
+          let precoFinal = p.preco;
+          let descontoTexto = '';
+          if (p.desconto && p.desconto > 0) {
+            precoFinal = p.preco - (p.preco * p.desconto / 100);
+            descontoTexto = `<span class="desconto">-${p.desconto}% OFF</span>`;
+          }
+          box.innerHTML = `
+            <h3>${p.nome} ${descontoTexto}</h3>
+            <p>${p.descricao}</p>
+            <p><strong>Preço:</strong> R$ ${precoFinal.toFixed(2)}</p>
+            <a href="${p.linkPagamento}" target="_blank">Comprar agora</a> |
+            <a href="${p.linkDownload}" target="_blank">Download App</a>
+          `;
+          container.appendChild(box);
+        });
+      }
+    });
+  </script>
 </body>
 </html>

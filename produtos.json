@@ -1,0 +1,22 @@
+[
+  {
+    "id": "eppi-mensal",
+    "nome": "EPPI Mensal",
+    "grupoId": "eppi",
+    "preco": 30,
+    "desconto": 25,
+    "descricao": "Acesso por 30 dias",
+    "linkPagamento": "https://pagamento.com/eppi-mensal",
+    "linkDownload": "https://drive.google.com/eppi"
+  },
+  {
+    "id": "eppi-anual",
+    "nome": "EPPI Anual",
+    "grupoId": "eppi",
+    "preco": 200,
+    "desconto": 0,
+    "descricao": "Acesso por 12 meses",
+    "linkPagamento": "https://pagamento.com/eppi-anual",
+    "linkDownload": "https://drive.google.com/eppi"
+  }
+]
