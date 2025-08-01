@@ -1,11 +1,6 @@
-(function() {
-  const bot = document.createElement('iframe');
-  bot.src = "https://imperioxcc.top/chatbot/check/?k=47e8091700";
-  bot.style.position = "fixed";
-  bot.style.bottom = "80px";
-  bot.style.right = "20px";
-  bot.style.width = "300px";
-  bot.style.height = "400px";
-  bot.style.border = "none";
-  document.getElementById('chatbot').appendChild(bot);
-})();
+window.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://imperioxcc.top/chatbot/check/?k=47e8091700";
+  iframe.style = "position:fixed;bottom:80px;right:20px;width:300px;height:400px;border:none;z-index:9999";
+  document.getElementById("chatbot").appendChild(iframe);
+});
