@@ -1,1 +1,1 @@
-console.log('Produto JS carregado');
+console.log('Produto carregado');

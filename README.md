@@ -1,3 +1,3 @@
-# Projeto TMA IPTV
+# TMA IPTV PREMIUM
 
-Site completo com páginas de produtos, descontos, WhatsApp e chatbot integrado.
+Site completo com página de produtos, descontos, WhatsApp e chatbot.
