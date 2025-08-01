@@ -36,22 +36,36 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       padding: 20px;
       width: 90%;
-      max-width: 600px;
-      text-align: center;
+      max-width: 900px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .produto-card h3 {
+    .produto-img {
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+    .produto-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .produto-info {
+      flex: 1 1 400px;
+    }
+    .produto-info h3 {
       margin: 10px 0;
       font-size: 22px;
     }
-    .produto-card p {
+    .produto-info p {
       margin: 5px 0;
     }
-    .produto-card .preco-original {
+    .preco-original {
       text-decoration: line-through;
       color: red;
       margin-right: 5px;
     }
-    .produto-card .badge {
+    .badge {
       background: red;
       color: white;
       font-size: 12px;
@@ -60,22 +74,21 @@
       display: inline-block;
       margin-bottom: 5px;
     }
-    .produto-card img {
-      width: 100%;
-      height: auto;
-      max-height: 240px;
-      object-fit: contain;
-      border-radius: 6px;
-    }
     .btn {
       display: inline-block;
-      margin: 10px 8px;
+      margin: 10px 8px 0 0;
       background-color: #4CAF50;
       color: white;
       padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .quantidade {
+      margin-top: 10px;
+    }
+    .quantidade label {
+      margin-right: 10px;
     }
     #whatsapp-button, #chatbot-button {
       position: fixed;
@@ -149,13 +162,21 @@
           const imgSrc = `assets/${nomeImg}.jpg`;
 
           card.innerHTML = `
-            <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
-            ${badge}
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-            <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
-            <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
-            <a class="btn" href="${produto.download}" target="_blank">Download</a>
+            <div class="produto-img">
+              <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
+            </div>
+            <div class="produto-info">
+              ${badge}
+              <h3>${produto.nome}</h3>
+              <p>${produto.descricao}</p>
+              <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+              <div class="quantidade">
+                <label for="qtd-${produto.id}">Quantidade:</label>
+                <input type="number" id="qtd-${produto.id}" value="1" min="1" style="width: 60px;">
+              </div>
+              <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
+              <a class="btn" href="${produto.download}" target="_blank">Download</a>
+            </div>
           `;
 
           container.appendChild(card);
