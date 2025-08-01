@@ -1,39 +1,52 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TMA IPTV PREMIUM</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Downloads - TMA IPTV</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body>
-  <header>
-    <h1>TMA IPTV PREMIUM</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="downloads.html">Downloads</a>
-      <a href="painel.html">Painel</a>
-      <a href="termos.html">Termos</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header único e correto -->
+  <header class="bg-gray-800 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a class="text-white font-bold text-xl" href="index.html">TMA IPTV PREMIUM</a>
+      <nav class="space-x-4">
+        <a class="text-gray-300 hover:text-white" href="index.html">Início</a>
+        <a class="text-gray-300 hover:text-white" href="downloads.html">Downloads</a>
+        <a class="text-gray-300 hover:text-white" href="painel.html">Painel</a>
+        <a class="text-gray-300 hover:text-white" href="termos.html">Termos</a>
+        <a class="text-gray-300 hover:text-white" href="contato.html">Contato</a>
+        <a class="text-gray-300 hover:text-white" href="login.html">Login</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="group-list">
-    <div class="group-card">
-      <h3>📺 TV Box</h3>
-      <p>Aplicativos para TV Box Android</p>
-      <a class="download-button" href="#">Baixar</a>
-    </div>
-    <div class="group-card">
-      <h3>📱 Celular Android</h3>
-      <p>Aplicativos compatíveis com Android</p>
-      <a class="download-button" href="#">Baixar</a>
+  <!-- Espaço abaixo do header fixo -->
+  <div style="height: 70px;"></div>
+
+  <!-- Conteúdo principal -->
+  <main class="p-4 max-w-3xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 p-4 rounded-lg shadow text-center">
+        <h2 class="text-xl font-semibold mb-2">📺 TV Box</h2>
+        <p class="text-gray-400 mb-4">Aplicativos para TV Box Android</p>
+        <a class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white" href="https://drive.google.com/drive/folders/1Wss1Mv71yAy9zq5KSfFCSdGW5rtv0Edi" target="_blank">Baixar</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow text-center">
+        <h2 class="text-xl font-semibold mb-2">📱 Celular Android</h2>
+        <p class="text-gray-400 mb-4">Aplicativos compatíveis com Android</p>
+        <a class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white" href="https://drive.google.com/drive/folders/1Wss1Mv71yAy9zq5KSfFCSdGW5rtv0Edi" target="_blank">Baixar</a>
+      </div>
     </div>
   </main>
 
-  <script src="https://wa.me/5535998993464" id="whatsapp-button"></script>
-  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank"></a>
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="fixed bottom-4 right-4 z-50" href="https://wa.me/5535998993464" target="_blank">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" width="60" height="60" />
+  </a>
+
 </body>
 </html>
