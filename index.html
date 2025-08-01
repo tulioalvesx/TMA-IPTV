@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TMA IPTV PREMIUM</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #whatsapp-button img {
+      width: 64px;
+      height: 64px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,12 +35,13 @@
   </main>
 
   <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
-    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';"/>
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
   </a>
 
   <div id="chatbot"></div>
 
   <script>
+    // Corrige carregamento dos grupos de produtos
     fetch('grupos.json')
       .then(response => response.json())
       .then(data => {
@@ -38,19 +51,25 @@
           card.className = 'product-group';
           card.innerHTML = `
             <h2>${group.nome}</h2>
-            <img src="${group.imagem}" alt="${group.nome}" style="max-width:200px;">
             <a href="produto.html?grupo=${encodeURIComponent(group.id)}" class="btn">Ver detalhes</a>
           `;
           container.appendChild(card);
         });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar grupos:', error);
       });
 
+    // Chatbot com fallback para não mostrar erro na tela
     fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
       .then(r => r.json())
       .then(d => {
         if (d.result !== "failed") {
           document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
         }
+      })
+      .catch(() => {
+        // Silencia erro
       });
   </script>
 </body>
