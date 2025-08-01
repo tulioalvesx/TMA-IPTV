@@ -51,7 +51,13 @@
       border-radius: 6px;
     }
     .produto-info {
-      flex: 1 1 400px;
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto-descricao {
+      flex: 1 1 300px;
     }
     .produto-info h3 {
       margin: 10px 0;
@@ -86,9 +92,22 @@
     }
     .quantidade {
       margin-top: 10px;
+      display: flex;
+      align-items: center;
     }
     .quantidade label {
       margin-right: 10px;
+    }
+    .quantidade input[type=number] {
+      width: 60px;
+      text-align: center;
+    }
+    .quantidade button {
+      background-color: #ccc;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
     }
     #whatsapp-button, #chatbot-button {
       position: fixed;
@@ -171,11 +190,17 @@
               <p>${produto.descricao}</p>
               <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
               <div class="quantidade">
-                <label for="qtd-${produto.id}">Quantidade:</label>
-                <input type="number" id="qtd-${produto.id}" value="1" min="1" style="width: 60px;">
+                <label>Quantidade:</label>
+                <button onclick="this.nextElementSibling.stepDown()">-</button>
+                <input type="number" id="qtd-${produto.id}" value="1" min="1">
+                <button onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
               <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
               <a class="btn" href="${produto.download}" target="_blank">Download</a>
+            </div>
+            <div class="produto-descricao">
+              <h4>Descrição</h4>
+              <p>${produto.descricao_detalhada || 'Em breve mais informações sobre este produto.'}</p>
             </div>
           `;
 
