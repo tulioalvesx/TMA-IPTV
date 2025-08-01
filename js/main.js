@@ -1,1 +1,1 @@
-// Scripts gerais do site
+// Scripts globais futuros (chatbot, painel, etc.)

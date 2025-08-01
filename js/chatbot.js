@@ -1,1 +1,1 @@
-// Integração com servidor de resposta automática remoto
+// Integração futura com servidor remoto de chatbot
