@@ -1,12 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TMA IPTV PREMIUM</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    #produto-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+    .produto-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 900px;
+      display: flex;
+      gap: 20px;
+    }
+    .produto-img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      position: relative;
+    }
+    .produto-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .badge {position: absolute; top: 0; left: 0; background: red; color: white; font-size: 12px; padding: 4px 10px; border-radius: 4px; font-weight: bold; z-index: 10;}
+    .produto-info {
+      flex: 2 1 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto-info h3 {
+      margin: 10px 0 5px;
+      font-size: 22px;
+    }
+    .produto-info p {
+      margin: 5px 0;
+    }
+    .preco-original {
+      text-decoration: line-through;
+      color: red;
+      margin-right: 5px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .quantidade {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .quantidade label {
+      margin-right: 5px;
+    }
+    .quantidade input[type=number] {
+      width: 50px;
+      text-align: center;
+    }
+    .quantidade button {
+      background-color: #ccc;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #whatsapp-button, #chatbot-button {
+      position: fixed;
+      z-index: 1000;
+    }
+    #whatsapp-button {
+      bottom: 20px;
+      right: 20px;
+    }
+    #chatbot-button {
+      bottom: 100px;
+      right: 20px;
+    }
+    #whatsapp-button img,
+    #chatbot-button img {
+      width: 64px;
+      height: 64px;
+    }
+  </style>
+</head>
+<body>
+  YPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    #produto-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+    .produto-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 900px;
+      display: flex;
+      gap: 20px;
+    }
+    .produto-img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      position: relative;
+    }
+    .produto-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .badge {position: absolute; top: 0; left: 0; background: red; color: white; font-size: 12px; padding: 4px 10px; border-radius: 4px; font-weight: bold; z-index: 10;}
+    .produto-info {
+      flex: 2 1 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto-info h3 {
+      margin: 10px 0 5px;
+      font-size: 22px;
+    }
+    .produto-info p {
+      margin: 5px 0;
+    }
+    .preco-original {
+      text-decoration: line-through;
+      color: red;
+      margin-right: 5px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .quantidade {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .quantidade label {
+      margin-right: 5px;
+    }
+    .quantidade input[type=number] {
+      width: 50px;
+      text-align: center;
+    }
+    .quantidade button {
+      background-color: #ccc;
+      border: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #whatsapp-button, #chatbot-button {
+      position: fixed;
+      z-index: 1000;
+    }
+    #whatsapp-button {
+      bottom: 20px;
+      right: 20px;
+    }
+    #chatbot-button {
+      bottom: 100px;
+      right: 20px;
+    }
+    #whatsapp-button img,
+    #chatbot-button img {
+      width: 64px;
+      height: 64px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,8 +258,87 @@
       <a href="contato.html">Contato</a>
     </nav>
   </header>
-<main><h2>Produto</h2><p>Detalhes do produto selecionado.</p></main>
-  <script src="https://wa.me/5535998993464" id="whatsapp-button"></script>
-  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank"></a>
+
+  <main id="produto-list"></main>
+
+  <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
+  </a>
+  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank">
+    <img src="assets/chatbot.png" alt="Chatbot" onerror="this.style.display='none';" />
+  </a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const grupoId = params.get("grupo");
+
+    fetch("produtos.json")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("produto-list");
+        const grupo = data.find(g => g.grupo === grupoId);
+
+        if (!grupo || !grupo.produtos) {
+          container.innerHTML = "<p>Grupo não encontrado.</p>";
+          return;
+        }
+
+        grupo.produtos.forEach(produto => {
+          const card = document.createElement("div");
+          card.className = "produto-card";
+
+          const precoNumerico = parseFloat(produto.preco.replace(',', '.'));
+          const descontoNumerico = parseFloat(produto.desconto?.replace('%', '') || 0);
+          const precoComDesconto = (precoNumerico * (1 - descontoNumerico / 100)).toFixed(2).replace('.', ',');
+
+          const badge = descontoNumerico > 0 ? `<div class="badge">${descontoNumerico}% OFF</div>` : "";
+          const precoOriginal = descontoNumerico > 0 ? `<span class="preco-original">R$ ${produto.preco}</span>` : "";
+
+          const nomeImg = produto.nome.toLowerCase().replaceAll(' ', '-').replaceAll('+', '').replaceAll('.', '').replaceAll('ç','c').replaceAll('ã','a').replaceAll('á','a').replaceAll('é','e');
+          const imgSrc = `assets/${nomeImg}.jpg`;
+
+          card.innerHTML = `
+<div class="produto-img">
+  <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
+</div>
+<div class="produto-info">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+    <div style="flex: 1; position: relative;">
+      ${badge}
+      <h3 style="margin-top: 30px;">${produto.nome}</h3>
+      <p>${produto.descricao}</p>
+      <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+      ${
+        produto.estoque === 0
+        ? '<p style="color: red; font-weight: bold;">Produto esgotado</p>'
+        : `
+      <div class="quantidade">
+        <label>Quantidade:</label>
+        <button onclick="this.nextElementSibling.stepDown()">-</button>
+        <input type="number" id="qtd-${produto.id}" value="1" min="1">
+        <button onclick="this.previousElementSibling.stepUp()">+</button>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
+        <a class="btn" href="${produto.download}" target="_blank">Download</a>
+      </div>`
+      }
+    </div>
+    <div style="flex: 1;">
+      <p><strong>Descrição:</strong></p>
+      <p>${produto.descricao_custom || 'Em breve mais informações sobre este produto.'}</p>
+    </div>
+  </div>
+</div>
+`;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById("produto-list").innerHTML = "<p>Erro ao carregar produtos.</p>";
+        console.error(error);
+      });
+  </script>
 </body>
 </html>

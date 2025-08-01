@@ -1,12 +1,227 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TMA IPTV PREMIUM</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    #produto-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .produto {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .produto h3 {
+      margin: 10px 0 6px;
+    }
+
+    .produto p {
+      margin: 4px 0;
+    }
+
+    .preco-original {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 4px;
+    }
+
+    #whatsapp-button, #chatbot-button {
+      position: fixed;
+      z-index: 1000;
+    }
+
+    #whatsapp-button {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    #chatbot-button {
+      bottom: 100px;
+      right: 20px;
+    }
+
+    #whatsapp-button img,
+    #chatbot-button img {
+      width: 64px;
+      height: 64px;
+    }
+  </style>
+</head>
+<body>
+  YPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    #produto-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .produto {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .produto h3 {
+      margin: 10px 0 6px;
+    }
+
+    .produto p {
+      margin: 4px 0;
+    }
+
+    .preco-original {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 4px;
+    }
+
+    #whatsapp-button, #chatbot-button {
+      position: fixed;
+      z-index: 1000;
+    }
+
+    #whatsapp-button {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    #chatbot-button {
+      bottom: 100px;
+      right: 20px;
+    }
+
+    #whatsapp-button img,
+    #chatbot-button img {
+      width: 64px;
+      height: 64px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,8 +234,57 @@
       <a href="contato.html">Contato</a>
     </nav>
   </header>
-<main><h2>Produto Backup</h2><p>Versão anterior do produto.</p></main>
-  <script src="https://wa.me/5535998993464" id="whatsapp-button"></script>
-  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank"></a>
+
+  <main id="produto-list">
+    <!-- Produtos carregados via JS -->
+  </main>
+
+  <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
+  </a>
+
+  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank">
+    <img src="assets/chatbot.png" alt="Chatbot" />
+  </a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const grupoId = params.get("grupo");
+
+    fetch("produtos.json")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("produto-list");
+        const produtosDoGrupo = data.filter(p => p.grupo_id === grupoId);
+
+        if (produtosDoGrupo.length === 0) {
+          container.innerHTML = "<p>Grupo não encontrado.</p>";
+          return;
+        }
+
+        produtosDoGrupo.forEach(produto => {
+          const card = document.createElement("div");
+          card.className = "produto";
+
+          const precoOriginal = produto.desconto ? `<span class="preco-original">R$ ${(produto.preco).toFixed(2)}</span>` : "";
+          const precoComDesconto = produto.desconto ? (produto.preco * (1 - produto.desconto / 100)).toFixed(2) : produto.preco.toFixed(2);
+          const badge = produto.desconto ? `<div class="badge">${produto.desconto}% OFF</div>` : "";
+
+          card.innerHTML = `
+            ${badge}
+            <img src="assets/${produto.imagem}" alt="${produto.nome}" />
+            <h3>${produto.nome}</h3>
+            <p>${produto.descricao}</p>
+            <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+            <a class="btn" href="${produto.link_pagamento}" target="_blank">Comprar</a>
+            <a class="btn" href="${produto.link_download}" target="_blank">Download</a>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.getElementById("produto-list").innerHTML = "<p>Erro ao carregar produtos.</p>";
+      });
+  </script>
 </body>
 </html>

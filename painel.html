@@ -1,26 +1,60 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TMA IPTV PREMIUM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Interativo - TMA IPTV</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>TMA IPTV PREMIUM</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="downloads.html">Downloads</a>
-      <a href="painel.html">Painel</a>
-      <a href="termos.html">Termos</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </header>
-<main><h2>Painel Administrativo</h2><p>Área restrita para administradores.</p></main>
-  <script src="https://wa.me/5535998993464" id="whatsapp-button"></script>
-  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank"></a>
+<body class="bg-gray-900 text-white p-6">
+
+  <h1 class="text-3xl font-bold mb-6">Painel com Edição Local (LocalStorage)</h1>
+  <p class="mb-4 text-gray-400">As alterações serão salvas localmente no seu navegador.</p>
+
+  <div id="produtos" class="space-y-6 max-w-3xl mx-auto"></div>
+
+  <script>
+    const defaultProdutos = [
+      { nome: "BlueTV - Mensal", preco: "R$ 29,90", link: "#" },
+      { nome: "EPPI Cinema - Anual", preco: "R$ 239,90", link: "#" },
+      { nome: "Combo Express + Eppi - Mensal", preco: "R$ 34,90", link: "#" }
+    ];
+
+    function carregarProdutos() {
+      const dadosSalvos = localStorage.getItem("produtos");
+      return dadosSalvos ? JSON.parse(dadosSalvos) : defaultProdutos;
+    }
+
+    function salvarProdutos(produtos) {
+      localStorage.setItem("produtos", JSON.stringify(produtos));
+    }
+
+    const produtos = carregarProdutos();
+    const container = document.getElementById("produtos");
+
+    produtos.forEach((produto, index) => {
+      const bloco = document.createElement("div");
+      bloco.className = "bg-gray-800 p-4 rounded shadow";
+
+      bloco.innerHTML = `
+        <h2 class="text-xl font-semibold mb-2">${produto.nome}</h2>
+        <label class="block text-sm mb-1">Preço:</label>
+        <input type="text" id="preco-${index}" value="${produto.preco}" class="w-full mb-2 p-2 rounded bg-gray-700 text-white" />
+
+        <label class="block text-sm mb-1">Link de Pagamento:</label>
+        <input type="text" id="link-${index}" value="${produto.link}" class="w-full mb-4 p-2 rounded bg-gray-700 text-white" />
+
+        <button onclick="salvar(${index})" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Salvar</button>
+      `;
+      container.appendChild(bloco);
+    });
+
+    function salvar(index) {
+      produtos[index].preco = document.getElementById(`preco-${index}`).value;
+      produtos[index].link = document.getElementById(`link-${index}`).value;
+      salvarProdutos(produtos);
+      alert("Alterações salvas localmente!");
+    }
+  </script>
 </body>
 </html>
