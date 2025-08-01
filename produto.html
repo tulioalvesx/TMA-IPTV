@@ -194,6 +194,7 @@
 <div class="produto-info">
   <h3>${produto.nome}</h3>
   <p>${produto.descricao}</p>
+  <p><strong>Descrição:</strong> ${produto.descricao_custom || 'Descreva este produto aqui.'}</p>
   <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
   <div class="quantidade">
     <label>Quantidade:</label>
@@ -204,9 +205,6 @@
   <div class="btn-group">
     <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
     <a class="btn" href="${produto.download}" target="_blank">Download</a>
-  </div>
-  <div class="descricao-final" style="margin-top: 10px;">
-    <strong>Descrição:</strong> <span>${produto.descricao_custom || 'Descreva este produto aqui.'}</span>
   </div>
 </div>
 `;
