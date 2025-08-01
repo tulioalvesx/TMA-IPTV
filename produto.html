@@ -192,18 +192,26 @@
   ${badge}
 </div>
 <div class="produto-info">
-  <h3>${produto.nome}</h3>
-  <p><strong>Descrição:</strong> ${produto.descricao_custom || 'Em breve mais informações sobre este produto.'} - ${produto.descricao}</p>
-  <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
-  <div class="quantidade">
-    <label>Quantidade:</label>
-    <button onclick="this.nextElementSibling.stepDown()">-</button>
-    <input type="number" id="qtd-${produto.id}" value="1" min="1">
-    <button onclick="this.previousElementSibling.stepUp()">+</button>
-  </div>
-  <div class="btn-group">
-    <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
-    <a class="btn" href="${produto.download}" target="_blank">Download</a>
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+    <div style="flex: 1;">
+      <h3>${produto.nome}</h3>
+      <p>${produto.descricao}</p>
+      <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+      <div class="quantidade">
+        <label>Quantidade:</label>
+        <button onclick="this.nextElementSibling.stepDown()">-</button>
+        <input type="number" id="qtd-${produto.id}" value="1" min="1">
+        <button onclick="this.previousElementSibling.stepUp()">+</button>
+      </div>
+      <div class="btn-group">
+        <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
+        <a class="btn" href="${produto.download}" target="_blank">Download</a>
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <p><strong>Descrição:</strong></p>
+      <p>${produto.descricao_custom || 'Em breve mais informações sobre este produto.'}</p>
+    </div>
   </div>
 </div>
 `;
