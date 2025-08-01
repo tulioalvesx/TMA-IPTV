@@ -2,9 +2,65 @@
   {
     "grupo": "eppi",
     "produtos": [
-      { "id": "eppi-mensal", "nome": "EPPI Mensal", "descricao": "Acesso por 30 dias", "preco": "20,00", "desconto": "10%", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/20" },
-      { "id": "eppi-trimestral", "nome": "EPPI Trimestral", "descricao": "Acesso por 90 dias", "preco": "50,00", "desconto": "", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/50" },
-      { "id": "eppi-anual", "nome": "EPPI Anual", "descricao": "Acesso por 1 ano", "preco": "150,00", "desconto": "30%", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/150" }
+      {
+        "id": "eppi-mensal",
+        "nome": "EPPI Mensal",
+        "descricao": "Acesso por 30 dias",
+        "preco": "20,00",
+        "desconto": "10%",
+        "download": "https://drive.google.com/eppi",
+        "pagamento": "https://pagamento.infinitepay/20"
+      },
+      {
+        "id": "eppi-trimestral",
+        "nome": "EPPI Trimestral",
+        "descricao": "Acesso por 90 dias",
+        "preco": "50,00",
+        "desconto": "",
+        "download": "https://drive.google.com/eppi",
+        "pagamento": "https://pagamento.infinitepay/50"
+      },
+      {
+        "id": "eppi-anual",
+        "nome": "EPPI Anual",
+        "descricao": "Acesso por 1 ano",
+        "preco": "150,00",
+        "desconto": "30%",
+        "download": "https://drive.google.com/eppi",
+        "pagamento": "https://pagamento.infinitepay/150"
+      }
+    ]
+  },
+  {
+    "grupo": "tv-express",
+    "produtos": [
+      {
+        "id": "tvexpress-mensal",
+        "nome": "TV Express Mensal",
+        "descricao": "30 dias de acesso",
+        "preco": "25,00",
+        "desconto": "5%",
+        "download": "https://drive.google.com/tvexpress",
+        "pagamento": "https://pagamento.infinitepay/25"
+      },
+      {
+        "id": "tvexpress-trimestral",
+        "nome": "TV Express Trimestral",
+        "descricao": "90 dias de acesso",
+        "preco": "70,00",
+        "desconto": "15%",
+        "download": "https://drive.google.com/tvexpress",
+        "pagamento": "https://pagamento.infinitepay/70"
+      },
+      {
+        "id": "tvexpress-anual",
+        "nome": "TV Express Anual",
+        "descricao": "365 dias de acesso",
+        "preco": "200,00",
+        "desconto": "35%",
+        "download": "https://drive.google.com/tvexpress",
+        "pagamento": "https://pagamento.infinitepay/200"
+      }
     ]
   }
 ]
