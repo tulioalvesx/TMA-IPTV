@@ -1,1 +1,0 @@
-// Scripts globais futuros (chatbot, painel, etc.)
