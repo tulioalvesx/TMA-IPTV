@@ -1,52 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Downloads - TMA IPTV</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Downloads - TMA IPTV PREMIUM</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
-<body
->
-<nav class="bg-gray-800 p-4">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <a href="index.html" class="text-white font-bold text-xl">TMA IPTV</a>
-    <div class="space-x-4">
-      <a href="index.html" class="text-gray-300 hover:text-white">Início</a>
-      <a href="downloads.html" class="text-gray-300 hover:text-white">Downloads</a>
-      <a href="contato.html" class="text-gray-300 hover:text-white">Contato</a>
-      <a href="termos.html" class="text-gray-300 hover:text-white">Termos</a>
-      <a href="login.html" class="text-gray-300 hover:text-white">Login</a>
+<body class="bg-gradient-to-br from-pink-500 to-red-500 font-sans text-white">
+
+  <!-- Menu fixo -->
+  <nav class="bg-gray-900 p-4 fixed top-0 left-0 right-0 z-50 shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-white font-bold text-2xl">TMA IPTV PREMIUM</a>
+      <div class="space-x-4 text-sm">
+        <a href="index.html" class="text-gray-300 hover:text-white">Início</a>
+        <a href="downloads.html" class="text-gray-300 hover:text-white">Downloads</a>
+        <a href="painel.html" class="text-gray-300 hover:text-white">Painel</a>
+        <a href="termos.html" class="text-gray-300 hover:text-white">Termos</a>
+        <a href="contato.html" class="text-gray-300 hover:text-white">Contato</a>
+      </div>
     </div>
-  </div>
-</nav>
- class="bg-gray-900 text-white font-sans">
+  </nav>
 
-  <header class="bg-gray-800 p-4 text-center">
-    <h1 class="text-3xl font-bold">Downloads</h1>
-    <p class="text-gray-300 mt-1">Baixe os aplicativos oficiais da TMA IPTV</p>
-  </header>
+  <!-- Espaço para compensar nav fixo -->
+  <div class="h-20"></div>
 
-  <main class="p-4 max-w-3xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-6">
+  <!-- Conteúdo principal -->
+  <main class="flex flex-col items-center justify-center px-4 py-8">
+    <div class="text-center mb-6">
+      <img src="assets/logo.png" alt="Logo" class="mx-auto w-24 h-24 rounded-full border-4 border-white">
+      <h1 class="text-3xl font-bold mt-4">LINKAPPS</h1>
+    </div>
 
-      <div class="bg-gray-800 p-4 rounded-lg shadow text-center">
-        <h2 class="text-xl font-semibold mb-2">📺 TV Box</h2>
-        <p class="text-gray-400 mb-4">Aplicativos para TV Box Android</p>
-        <a href="https://drive.google.com/drive/folders/1Wss1Mv71yAy9zq5KSfFCSdGW5rtv0Edi" target="_blank"
-           class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">Baixar</a>
-      </div>
+    <div class="w-full max-w-xl space-y-4">
+      <!-- Exemplo de botão de download -->
+      <a href="#" class="flex items-center bg-white text-black rounded-full px-4 py-2 shadow hover:bg-gray-100 transition">
+        <img src="assets/eppi.png" alt="EPPI" class="w-10 h-10 rounded-full mr-4">
+        <span class="font-semibold">EPPI CELULAR</span>
+      </a>
 
-      <div class="bg-gray-800 p-4 rounded-lg shadow text-center">
-        <h2 class="text-xl font-semibold mb-2">📱 Celular Android</h2>
-        <p class="text-gray-400 mb-4">Aplicativos compatíveis com Android</p>
-        <a href="https://drive.google.com/drive/folders/1Wss1Mv71yAy9zq5KSfFCSdGW5rtv0Edi" target="_blank"
-           class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">Baixar</a>
-      </div>
+      <a href="#" class="flex items-center bg-white text-black rounded-full px-4 py-2 shadow hover:bg-gray-100 transition">
+        <img src="assets/eppi.png" alt="EPPI" class="w-10 h-10 rounded-full mr-4">
+        <span class="font-semibold">EPPI TVBOX</span>
+      </a>
 
+      <a href="#" class="flex items-center bg-white text-black rounded-full px-4 py-2 shadow hover:bg-gray-100 transition">
+        <img src="assets/tvexpress.png" alt="TVE" class="w-10 h-10 rounded-full mr-4">
+        <span class="font-semibold">TVE CELULAR</span>
+      </a>
+
+      <a href="#" class="flex items-center bg-white text-black rounded-full px-4 py-2 shadow hover:bg-gray-100 transition">
+        <img src="assets/tvexpress.png" alt="TVE" class="w-10 h-10 rounded-full mr-4">
+        <span class="font-semibold">TVE TVBOX</span>
+      </a>
+
+      <!-- Adicione os demais seguindo o mesmo padrão -->
     </div>
   </main>
 
+  <!-- Botão WhatsApp -->
   <a href="https://wa.me/5535998993464" class="fixed bottom-4 right-4 z-50">
     <img src="assets/whatsapp-icon.png" alt="WhatsApp" width="60" height="60">
   </a>
