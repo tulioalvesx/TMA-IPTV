@@ -1,3 +1,3 @@
 # TMA IPTV PREMIUM
 
-Site com cards de produtos, detalhes, links de compra e download, WhatsApp e Chatbot.
+Site completo com página de produtos, descontos, WhatsApp e chatbot.
