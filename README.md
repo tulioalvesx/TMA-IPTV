@@ -1,85 +1,88 @@
-# TMA IPTV PREMIUM
 
-Site institucional da loja **TMA IPTV PREMIUM** com planos de IPTV, links de pagamento, área de downloads e painel administrativo.
+# 📦 TMA IPTV PREMIUM
 
----
-
-## 🌐 Estrutura de Páginas
-
-- `index.html` — Página inicial com apresentação dos produtos
-- `downloads.html` — Página com links de download para apps de TV Box e celular
-- `login.html` — Tela de login (visual)
-- `painel.html` — Estrutura base do painel administrativo
-- `contato.html` — Formulário para envio de mensagens via WhatsApp
-- `termos.html` — Termos de uso e políticas
+Este projeto é um site estático para a loja **TMA IPTV PREMIUM**, com foco em exibição de produtos, integração com chatbot, painel administrativo simples e botão de contato via WhatsApp.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🗂 Estrutura de Diretórios
 
 ```
-tma-iptv/
-├── index.html
-├── downloads.html
-├── login.html
-├── painel.html
-├── contato.html
-├── termos.html
-├── style.css
-└── assets/
-    ├── *.jpg (imagens dos combos)
-    └── whatsapp-icon.png
+📁 tma-iptv/
+├── index.html               ← Página principal com cards de produtos
+├── produto.html             ← Template para página individual de produto
+├── painel.html              ← Painel para cadastrar/editar produtos (via localStorage)
+├── downloads.html           ← Página com links de apps
+├── termos.html              ← Termos de uso
+├── contato.html             ← Informações de contato
+├── login.html               ← (Reservado para autenticação futura)
+├── sucesso/index.html       ← Tela pós-pagamento
+│
+├── css/
+│   └── style.css            ← Estilos visuais
+│
+├── js/
+│   ├── produto.js           ← Lógica para exibir os produtos na página inicial
+│   ├── painel.js            ← Funções de CRUD do painel admin
+│   └── chatbot.js           ← Integração com chatbot personalizado
+│
+├── assets/
+│   ├── imagens dos produtos
+│   ├── whatsapp-icon.png    ← Ícone do botão flutuante do WhatsApp
 ```
 
 ---
 
-## 🚀 Como publicar
+## 🚀 Funcionalidades
 
-### Requisitos:
-- Conta no GitHub
-- Conta na Vercel (vercel.com)
-
-### Passo a passo:
-1. Faça login na Vercel e conecte o repositório do GitHub onde o site foi enviado.
-2. Confirme que a Vercel está usando o branch `main` e a raiz do projeto é a raiz do repositório.
-3. Toda alteração feita no GitHub será automaticamente publicada pela Vercel.
-4. O site ficará acessível em `https://tma-iptv.vercel.app` (ou domínio próprio, se configurado).
+- ✅ Exibição dinâmica de produtos na home (via `produto.js`)
+- ✅ Cadastro, edição e exclusão de produtos via painel (armazenado em `localStorage`)
+- ✅ Página individual com detalhes do produto e botão de download
+- ✅ Aplicação de desconto com tarja “X% OFF”
+- ✅ Botão flutuante com WhatsApp: `+55 35 99899-3464`
+- ✅ Chatbot com API integrada: [`https://imperioxcc.top/chatbot/check/?k=47e8091700`](https://imperioxcc.top/chatbot/check/?k=47e8091700)
+- ✅ Página de sucesso após pagamento
 
 ---
 
-## 💬 Contato
+## 💾 Armazenamento e Painel Administrativo
 
-Botão de WhatsApp flutuante integrado com o número: `+55 35 99899-3464`
+Todos os produtos são salvos localmente no navegador através do `localStorage`.
 
-Chatbot automático conectado com o servidor:
-`https://imperioxcc.top/chatbot/check/?k=47e8091700`
-
----
-
-## 🛠 Personalização
-
-- Os links de pagamento estão em formato genérico e podem ser alterados futuramente via painel.
-- Os arquivos de imagem podem ser substituídos diretamente na pasta `assets/`.
+- Para acessar o painel: vá para `painel.html`
+- No painel você pode:
+  - Criar novo produto
+  - Adicionar imagem (nome de arquivo já salvo em `/assets`)
+  - Inserir link de download
+  - Inserir link de pagamento
+  - Aplicar desconto (em %)
 
 ---
 
-Feito com ❤️ para TMA IPTV
+## 🔁 Atualização no GitHub + Deploy Automático
+
+1. Atualize qualquer arquivo na pasta `C:\Users\tulio\Documents\tma-iptv`
+2. Rode o script `.bat` que faz:
+   - Commit no GitHub
+   - Push automático
+3. O Vercel se encarrega de fazer o deploy do site estático
 
 ---
 
-## 🛠 Painel com Edição Local (JavaScript + localStorage)
+## 📦 Link de downloads dos apps
 
-A página `painel.html` permite editar os produtos diretamente no navegador, sem backend.
+Você pode manter os arquivos nesta pasta no Google Drive:
 
-### Funcionalidades:
-- Atualizar valores e links de pagamento
-- As alterações são salvas localmente via `localStorage`
-- Funciona mesmo após recarregar a página (desde que no mesmo navegador)
+📁 [Pasta Drive de Aplicativos](https://drive.google.com/drive/folders/1Wss1Mv71yAy9zq5KSfFCSdGW5rtv0Edi?usp=drive_link)
 
-### Como usar:
-1. Acesse `painel.html`
-2. Altere os campos de preço e link
-3. Clique em “Salvar” — os dados ficam armazenados no navegador
-4. Para limpar, apague o cache do navegador
+Cada produto pode conter o botão de download individual + página geral de `downloads.html`.
 
-> Esta versão é ideal para testes ou operação manual. Em breve, você pode evoluir para um painel com banco de dados real.
+---
+
+## 🛠️ Próximas evoluções (sugestões)
+
+- Painel com autenticação (login por senha)
+- Banco de dados real + painel online com backend (Firebase ou Supabase)
+- Filtros e busca de produtos
+- Modal para login de revendedores
+- Página de FAQs e Suporte
