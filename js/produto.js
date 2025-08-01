@@ -1,55 +1,71 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  const groupList = document.getElementById("group-list");
-  const params = new URLSearchParams(window.location.search);
-  const groupParam = params.get("grupo");
-  const saved = JSON.parse(localStorage.getItem("tma_produtos") || "{}");
+  const urlParams = new URLSearchParams(window.location.search);
+  const groupParam = urlParams.get("grupo");
 
-  if (groupParam) {
-    // Página produto.html: renderizar itens do grupo
-    const produtos = saved[groupParam] || [];
-    if (produtos.length === 0) {
-      document.body.innerHTML += "<p>Grupo não encontrado.</p>";
-      return;
-    }
+  if (!groupParam) {
+    const erro = document.createElement("p");
+    erro.textContent = "Grupo não encontrado.";
+    document.getElementById("conteudo")?.appendChild(erro);
+    return;
+  }
 
-    document.body.innerHTML += `<h2>${groupParam.toUpperCase()}</h2>`;
-    const container = document.createElement("section");
-    container.classList.add("produto-detalhes");
+  const titulo = document.createElement("h2");
+  titulo.textContent = groupParam.toUpperCase();
+  document.getElementById("conteudo")?.appendChild(titulo);
 
-    produtos.forEach(prod => {
-      const card = document.createElement("div");
-      card.classList.add("produto");
+  fetch("produtos.json")
+    .then((response) => response.json())
+    .then((produtos) => {
+      const grupoProdutos = produtos.filter(
+        (produto) => produto.grupo.toLowerCase() === groupParam.toLowerCase()
+      );
 
-      let descontoHTML = "";
-      if (prod.desconto && parseInt(prod.desconto) > 0) {
-        descontoHTML = `<span class='desconto'>${prod.desconto}% OFF</span>`;
+      if (grupoProdutos.length === 0) {
+        const nenhum = document.createElement("p");
+        nenhum.textContent = "Nenhum produto encontrado para este grupo.";
+        document.getElementById("conteudo")?.appendChild(nenhum);
+        return;
       }
 
-      card.innerHTML = `
-        <img src="assets/${prod.imagem}" alt="${prod.nome}" />
-        <h3>${prod.nome}</h3>
-        ${descontoHTML}
-        <p>${prod.descricao}</p>
-        <p>💰 <strong>R$ ${prod.preco}</strong></p>
-        <a href="${prod.linkPagamento}" class="botao">Comprar</a>
-        <a href="${prod.linkDownload}" class="botao secundario">Download</a>
-      `;
-      container.appendChild(card);
-    });
+      const container = document.createElement("section");
+      container.className = "grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4";
 
-    document.body.appendChild(container);
+      grupoProdutos.forEach((produto) => {
+        const card = document.createElement("div");
+        card.className = "bg-gray-800 rounded-xl p-4 shadow-md relative";
 
-  } else if (groupList) {
-    // Página index.html: renderizar grupos
-    Object.keys(saved).forEach(grupo => {
-      const div = document.createElement("div");
-      div.classList.add("grupo");
-      div.innerHTML = `
-        <h2>${grupo.toUpperCase()}</h2>
-        <a href="produto.html?grupo=${grupo}" class="botao">Ver detalhes</a>
-      `;
-      groupList.appendChild(div);
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${produto.imagem}" alt="${produto.nome}" class="rounded-xl mb-4 w-full h-48 object-cover">
+            ${
+              produto.estoque === false
+                ? '<div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs font-bold rounded">ESGOTADO</div>'
+                : produto.promocao
+                ? `<div class="absolute top-2 left-2 bg-yellow-500 text-black px-2 py-1 text-xs font-bold rounded">${produto.promocao}</div>`
+                : ""
+            }
+          </div>
+          <h3 class="text-white text-lg font-bold mb-1">${produto.nome}</h3>
+          <p class="text-sm text-gray-300 mb-2">${produto.complemento}</p>
+          <p class="text-white text-xl font-bold mb-2">R$ ${produto.valor}</p>
+          <label class="text-gray-400 text-sm block mb-1">Descrição:</label>
+          <textarea class="w-full h-20 text-sm p-2 rounded bg-gray-700 text-white mb-4" placeholder="Escreva os detalhes aqui..."></textarea>
+          <div class="flex justify-between">
+            <a href="${produto.link_pagamento}" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded text-sm">Comprar</a>
+            <a href="${produto.link_download}" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-sm">Download</a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      document.getElementById("conteudo")?.appendChild(container);
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar produtos:", error);
+      const erro = document.createElement("p");
+      erro.textContent = "Erro ao carregar os produtos.";
+      document.getElementById("conteudo")?.appendChild(erro);
     });
-  }
 });
