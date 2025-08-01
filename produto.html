@@ -194,10 +194,7 @@
 <div class="produto-info">
   <h3>${produto.nome}</h3>
   <p>${produto.descricao}</p>
-  <div class="produto-descricao-custom" style="margin: 10px 0; padding: 10px; background: #f1f1f1; border-radius: 6px;">
-    <strong>Descrição:</strong>
-    <p>${produto.descricao_custom || 'Descreva este produto aqui.'}</p>
-  </div>
+  <p><strong>Descrição:</strong> ${produto.descricao_custom || 'Descreva este produto aqui.'}</p>
   <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
   <div class="quantidade">
     <label>Quantidade:</label>
