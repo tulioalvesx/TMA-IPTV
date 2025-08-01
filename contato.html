@@ -1,1 +1,40 @@
-<!DOCTYPE html><html><head><title>Contato</title></head><body><h1>Contato</h1></body></html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - TMA IPTV</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body
+>
+<nav class="bg-gray-800 p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="text-white font-bold text-xl">TMA IPTV</a>
+    <div class="space-x-4">
+      <a href="index.html" class="text-gray-300 hover:text-white">Início</a>
+      <a href="downloads.html" class="text-gray-300 hover:text-white">Downloads</a>
+      <a href="contato.html" class="text-gray-300 hover:text-white">Contato</a>
+      <a href="termos.html" class="text-gray-300 hover:text-white">Termos</a>
+      <a href="login.html" class="text-gray-300 hover:text-white">Login</a>
+    </div>
+  </div>
+</nav>
+ class="bg-gray-900 text-white p-6">
+  <h1 class="text-3xl font-bold mb-6 text-center">Fale Conosco</h1>
+  <div class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow">
+    <form action="https://wa.me/5535998993464" method="GET" target="_blank">
+      <label class="block mb-2">Seu nome:</label>
+      <input type="text" class="w-full p-2 mb-4 rounded bg-gray-700 text-white" placeholder="Seu nome" required>
+
+      <label class="block mb-2">Seu e-mail:</label>
+      <input type="email" class="w-full p-2 mb-4 rounded bg-gray-700 text-white" placeholder="seu@email.com" required>
+
+      <label class="block mb-2">Mensagem:</label>
+      <textarea class="w-full p-2 mb-4 rounded bg-gray-700 text-white" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>
+
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 py-2 rounded">Enviar via WhatsApp</button>
+    </form>
+  </div>
+</body>
+</html>
