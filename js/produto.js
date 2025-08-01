@@ -1,1 +1,1 @@
-console.log('Produto carregado');
+console.log('Produtos serão carregados dinamicamente aqui.')

