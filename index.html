@@ -100,7 +100,7 @@
     <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
   </a>
 
-  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank" style="display: none;">
+  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank">
     <img src="assets/chatbot.png" alt="Chatbot" onerror="this.style.display='none';" />
   </a>
 
@@ -124,15 +124,6 @@
       .catch(error => {
         console.error('Erro ao carregar grupos:', error);
       });
-
-    fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
-      .then(r => r.json())
-      .then(d => {
-        if (d.result !== "failed") {
-          document.getElementById("chatbot-button").style.display = "block";
-        }
-      })
-      .catch(() => {});
   </script>
 </body>
 </html>
