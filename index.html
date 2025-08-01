@@ -71,16 +71,15 @@
       width: 64px;
       height: 64px;
     }
-    .chatbot-bubble {
+    #chatbot-button {
       position: fixed;
       bottom: 100px;
       right: 20px;
-      background: #0078d7;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 16px;
-      cursor: pointer;
       z-index: 1000;
+    }
+    #chatbot-button img {
+      width: 64px;
+      height: 64px;
     }
   </style>
 </head>
@@ -104,7 +103,11 @@
     <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
   </a>
 
-  <div id="chatbot"></div>
+  <div id="chatbot-button" style="display: none;">
+    <a href="https://wa.me/5535998993464" target="_blank">
+      <img src="assets/chatbot.png" alt="Chatbot" />
+    </a>
+  </div>
 
   <script>
     fetch('grupos.json')
@@ -131,7 +134,7 @@
       .then(r => r.json())
       .then(d => {
         if (d.result !== "failed") {
-          document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
+          document.getElementById("chatbot-button").style.display = "block";
         }
       })
       .catch(() => {});
