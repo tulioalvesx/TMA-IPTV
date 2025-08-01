@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,6 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produtos</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #whatsapp-button img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      display: block;
+    }
+    .badge {
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 4px;
+    }
+    .produto {
+      position: relative;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .preco-original {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,8 +60,10 @@
   </main>
 
   <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
-    <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
   </a>
+
+  <div id="chatbot"></div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -57,7 +96,19 @@
           `;
           container.appendChild(card);
         });
+      })
+      .catch(() => {
+        document.getElementById("produto-list").innerHTML = "<p>Erro ao carregar produtos.</p>";
       });
+
+    fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
+      .then(r => r.json())
+      .then(d => {
+        if (d.result !== "failed") {
+          document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
+        }
+      })
+      .catch(() => {});
   </script>
 </body>
 </html>
