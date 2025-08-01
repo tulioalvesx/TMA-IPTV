@@ -41,6 +41,7 @@
       gap: 20px;
     }
     .produto-img {
+      overflow: hidden;
       flex: 1 1 300px;
       max-width: 300px;
       position: relative;
@@ -188,12 +189,12 @@
           card.innerHTML = `
 <div class="produto-img">
   <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
+  ${badge}
 </div>
 <div class="produto-info">
   <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
-    <div style="flex: 1; position: relative;">
-      ${badge}
-      <h3 style="margin-top: 10px;">${produto.nome}</h3>
+    <div style="flex: 1;">
+      <h3>${produto.nome}</h3>
       <p>${produto.descricao}</p>
       <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
       <div class="quantidade">
