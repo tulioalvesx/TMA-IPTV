@@ -1,1 +1,1 @@
-console.log('Produtos serão carregados dinamicamente aqui.')
+document.getElementById('product-list').innerHTML = '<p>Carregando produtos...</p>';
