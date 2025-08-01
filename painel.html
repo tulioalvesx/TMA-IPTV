@@ -1,19 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel Interativo - TMA IPTV</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Painel Interativo - TMA IPTV</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-gray-900 text-white p-6">
+<header class="bg-black text-white py-4">
+<div class="container mx-auto flex justify-between items-center px-4">
+<h1 class="text-2xl font-bold">TMA IPTV PREMIUM</h1>
+<nav class="space-x-4">
+<a class="hover:underline" href="index.html">Início</a>
+<a class="hover:underline" href="downloads.html">Downloads</a>
+<a class="hover:underline" href="painel.html">Painel</a>
+<a class="hover:underline" href="termos.html">Termos</a>
+<a class="hover:underline" href="contato.html">Contato</a>
+</nav>
+</div>
+</header>
 
-  <h1 class="text-3xl font-bold mb-6">Painel com Edição Local (LocalStorage)</h1>
-  <p class="mb-4 text-gray-400">As alterações serão salvas localmente no seu navegador.</p>
-
-  <div id="produtos" class="space-y-6 max-w-3xl mx-auto"></div>
-
-  <script>
+<h1 class="text-3xl font-bold mb-6">Painel com Edição Local (LocalStorage)</h1>
+<p class="mb-4 text-gray-400">As alterações serão salvas localmente no seu navegador.</p>
+<div class="space-y-6 max-w-3xl mx-auto" id="produtos"></div>
+<script>
     const defaultProdutos = [
       { nome: "BlueTV - Mensal", preco: "R$ 29,90", link: "#" },
       { nome: "EPPI Cinema - Anual", preco: "R$ 239,90", link: "#" },
