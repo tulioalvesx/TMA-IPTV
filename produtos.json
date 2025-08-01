@@ -1,47 +1,10 @@
 [
   {
-    "grupo_id": "eppi",
-    "nome": "Plano Mensal EPPI",
-    "descricao": "Acesso mensal ao EPPI Cinema.",
-    "preco": 29.9,
-    "desconto": 10,
-    "link_pagamento": "https://pagamento.com/eppi-mensal",
-    "link_download": "https://download.com/eppi"
-  },
-  {
-    "grupo_id": "eppi",
-    "nome": "Plano Anual EPPI",
-    "descricao": "Acesso anual ao EPPI Cinema.",
-    "preco": 199.9,
-    "desconto": 30,
-    "link_pagamento": "https://pagamento.com/eppi-anual",
-    "link_download": "https://download.com/eppi"
-  },
-  {
-    "grupo_id": "tvexpress",
-    "nome": "Plano Trimestral TV Express",
-    "descricao": "3 meses de acesso ao TV Express.",
-    "preco": 79.9,
-    "desconto": 20,
-    "link_pagamento": "https://pagamento.com/tvexpress-tri",
-    "link_download": "https://download.com/tvexpress"
-  },
-  {
-    "grupo_id": "bluetv",
-    "nome": "Plano Mensal Blue TV",
-    "descricao": "Acesso mensal ao Blue TV.",
-    "preco": 25.0,
-    "desconto": 0,
-    "link_pagamento": "https://pagamento.com/bluetv-mensal",
-    "link_download": "https://download.com/bluetv"
-  },
-  {
-    "grupo_id": "imperiotv",
-    "nome": "Plano Semestral Império TV",
-    "descricao": "6 meses de acesso à Império TV.",
-    "preco": 129.9,
-    "desconto": 15,
-    "link_pagamento": "https://pagamento.com/imperiotv-sem",
-    "link_download": "https://download.com/imperiotv"
+    "grupo": "eppi",
+    "produtos": [
+      { "id": "eppi-mensal", "nome": "EPPI Mensal", "descricao": "Acesso por 30 dias", "preco": "20,00", "desconto": "10%", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/20" },
+      { "id": "eppi-trimestral", "nome": "EPPI Trimestral", "descricao": "Acesso por 90 dias", "preco": "50,00", "desconto": "", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/50" },
+      { "id": "eppi-anual", "nome": "EPPI Anual", "descricao": "Acesso por 1 ano", "preco": "150,00", "desconto": "30%", "download": "https://drive.google.com/eppi", "pagamento": "https://pagamento.infinitepay/150" }
+    ]
   }
 ]
