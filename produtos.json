@@ -9,7 +9,9 @@
         "preco": "20,00",
         "desconto": "10%",
         "download": "https://drive.google.com/eppi",
-        "pagamento": "https://pagamento.infinitepay/20"
+        "pagamento": "https://pagamento.infinitepay/20",
+        "estoque": 10,
+        "descricao_custom": ""
       },
       {
         "id": "eppi-trimestral",
@@ -18,7 +20,9 @@
         "preco": "50,00",
         "desconto": "",
         "download": "https://drive.google.com/eppi",
-        "pagamento": "https://pagamento.infinitepay/50"
+        "pagamento": "https://pagamento.infinitepay/50",
+        "estoque": 10,
+        "descricao_custom": ""
       },
       {
         "id": "eppi-anual",
@@ -27,7 +31,9 @@
         "preco": "150,00",
         "desconto": "30%",
         "download": "https://drive.google.com/eppi",
-        "pagamento": "https://pagamento.infinitepay/150"
+        "pagamento": "https://pagamento.infinitepay/150",
+        "estoque": 10,
+        "descricao_custom": ""
       }
     ]
   },
@@ -41,7 +47,9 @@
         "preco": "25,00",
         "desconto": "5%",
         "download": "https://drive.google.com/tvexpress",
-        "pagamento": "https://pagamento.infinitepay/25"
+        "pagamento": "https://pagamento.infinitepay/25",
+        "estoque": 0,
+        "descricao_custom": ""
       },
       {
         "id": "tvexpress-trimestral",
@@ -50,7 +58,9 @@
         "preco": "70,00",
         "desconto": "15%",
         "download": "https://drive.google.com/tvexpress",
-        "pagamento": "https://pagamento.infinitepay/70"
+        "pagamento": "https://pagamento.infinitepay/70",
+        "estoque": 10,
+        "descricao_custom": ""
       },
       {
         "id": "tvexpress-anual",
@@ -59,7 +69,9 @@
         "preco": "200,00",
         "desconto": "35%",
         "download": "https://drive.google.com/tvexpress",
-        "pagamento": "https://pagamento.infinitepay/200"
+        "pagamento": "https://pagamento.infinitepay/200",
+        "estoque": 10,
+        "descricao_custom": ""
       }
     ]
   }
