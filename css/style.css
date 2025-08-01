@@ -1,1 +1,5 @@
-body { font-family: sans-serif; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background-color: #111; color: white; padding: 1rem; text-align: center; }
+nav a { margin: 0 10px; color: white; text-decoration: none; }
+#whatsapp-button { position: fixed; bottom: 20px; right: 20px; }
+#product-list { padding: 1rem; }
