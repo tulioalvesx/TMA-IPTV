@@ -1,0 +1,8 @@
+[
+  { "id": "eppi", "nome": "EPPI Cinema", "descricao": "Filmes e séries atualizados", "imagem": "eppi.jpg" },
+  { "id": "tv-express", "nome": "TV Express", "descricao": "Canais ao vivo e filmes", "imagem": "tv-express.jpg" },
+  { "id": "unitv", "nome": "UniTV", "descricao": "Conteúdo completo familiar", "imagem": "unitv.jpg" },
+  { "id": "imperio", "nome": "Império TV", "descricao": "Canais premium e esportes", "imagem": "imperio.jpg" },
+  { "id": "blue", "nome": "Blue TV", "descricao": "Diversão e entretenimento", "imagem": "blue.jpg" },
+  { "id": "hot", "nome": "HOT App", "descricao": "Conteúdo adulto exclusivo", "imagem": "hot.jpg" }
+]
