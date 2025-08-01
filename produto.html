@@ -44,23 +44,33 @@
     .produto-img {
       flex: 1 1 300px;
       max-width: 300px;
+      position: relative;
     }
     .produto-img img {
       width: 100%;
       height: auto;
       border-radius: 6px;
     }
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: -20px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      transform: rotate(-45deg);
+      width: 100px;
+      text-align: center;
+    }
     .produto-info {
-      flex: 1 1 250px;
+      flex: 2 1 400px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-    .produto-descricao {
-      flex: 1 1 300px;
     }
     .produto-info h3 {
-      margin: 10px 0;
+      margin: 10px 0 5px;
       font-size: 22px;
     }
     .produto-info p {
@@ -71,18 +81,13 @@
       color: red;
       margin-right: 5px;
     }
-    .badge {
-      background: red;
-      color: white;
-      font-size: 12px;
-      padding: 3px 6px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 5px;
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
     }
     .btn {
       display: inline-block;
-      margin: 10px 8px 0 0;
       background-color: #4CAF50;
       color: white;
       padding: 10px 20px;
@@ -94,9 +99,10 @@
       margin-top: 10px;
       display: flex;
       align-items: center;
+      gap: 5px;
     }
     .quantidade label {
-      margin-right: 10px;
+      margin-right: 5px;
     }
     .quantidade input[type=number] {
       width: 60px;
@@ -108,6 +114,12 @@
       padding: 5px 10px;
       font-size: 16px;
       cursor: pointer;
+    }
+    .produto-descricao {
+      margin-top: 15px;
+    }
+    .produto-descricao h4 {
+      margin-bottom: 5px;
     }
     #whatsapp-button, #chatbot-button {
       position: fixed;
@@ -140,9 +152,7 @@
     </nav>
   </header>
 
-  <main id="produto-list">
-    <!-- Produtos serão carregados aqui -->
-  </main>
+  <main id="produto-list"></main>
 
   <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
     <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
@@ -183,9 +193,9 @@
           card.innerHTML = `
             <div class="produto-img">
               <img src="${imgSrc}" alt="${produto.nome}" onerror="this.style.display='none'" />
+              ${badge}
             </div>
             <div class="produto-info">
-              ${badge}
               <h3>${produto.nome}</h3>
               <p>${produto.descricao}</p>
               <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
@@ -195,12 +205,14 @@
                 <input type="number" id="qtd-${produto.id}" value="1" min="1">
                 <button onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
-              <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
-              <a class="btn" href="${produto.download}" target="_blank">Download</a>
-            </div>
-            <div class="produto-descricao">
-              <h4>Descrição</h4>
-              <p>${produto.descricao_detalhada || 'Em breve mais informações sobre este produto.'}</p>
+              <div class="btn-group">
+                <a class="btn" href="https://pagamento.infinitepay/${precoNumerico}" target="_blank">Comprar</a>
+                <a class="btn" href="${produto.download}" target="_blank">Download</a>
+              </div>
+              <div class="produto-descricao">
+                <h4>Descrição</h4>
+                <p>${produto.descricao_detalhada || 'Em breve mais informações sobre este produto.'}</p>
+              </div>
             </div>
           `;
 
