@@ -2,11 +2,21 @@
   {
     "id": "eppi",
     "nome": "EPPI Cinema",
-    "imagem": "assets/eppi.jpg"
+    "imagem": "assets/eppi.png"
   },
   {
     "id": "tvexpress",
     "nome": "TV Express",
-    "imagem": "assets/tvexpress.jpg"
+    "imagem": "assets/tvexpress.png"
+  },
+  {
+    "id": "bluetv",
+    "nome": "Blue TV",
+    "imagem": "assets/bluetv.png"
+  },
+  {
+    "id": "imperiotv",
+    "nome": "Império TV",
+    "imagem": "assets/imperiotv.png"
   }
 ]

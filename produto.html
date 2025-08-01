@@ -2,65 +2,62 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Detalhes do Produto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Detalhes do Produto</h1>
-    <a href="index.html">← Voltar</a>
+    <h1>TMA IPTV PREMIUM</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="painel.html">Painel</a>
+      <a href="termos.html">Termos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
   </header>
-  <main id="product-detail"></main>
+
+  <main id="produto-list">
+    <!-- Produtos serão carregados aqui via JS -->
+  </main>
+
+  <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
+  </a>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const grupoId = urlParams.get('grupo');
+    const params = new URLSearchParams(window.location.search);
+    const grupoId = params.get("grupo");
 
-    Promise.all([
-      fetch('grupos.json').then(r => r.json()),
-      fetch('produtos.json').then(r => r.json())
-    ]).then(([grupos, produtos]) => {
-      const grupo = grupos.find(g => g.id === grupoId);
-      const container = document.getElementById('product-detail');
-      if (!grupo) {
-        container.innerHTML = '<p>Grupo não encontrado.</p>';
-        return;
-      }
+    fetch("produtos.json")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("produto-list");
+        const produtosDoGrupo = data.filter(p => p.grupo_id === grupoId);
 
-      const header = document.createElement('h2');
-      header.textContent = grupo.nome;
-      container.appendChild(header);
+        if (produtosDoGrupo.length === 0) {
+          container.innerHTML = "<p>Grupo não encontrado.</p>";
+          return;
+        }
 
-      const img = document.createElement('img');
-      img.src = grupo.imagem;
-      img.style.maxWidth = "250px";
-      container.appendChild(img);
-
-      const items = produtos.filter(p => p.grupoId === grupoId);
-      if (items.length === 0) {
-        container.innerHTML += "<p>Nenhum produto disponível.</p>";
-      } else {
-        items.forEach(p => {
-          const box = document.createElement('div');
-          box.className = 'produto-card';
-          let precoFinal = p.preco;
-          let descontoTexto = '';
-          if (p.desconto && p.desconto > 0) {
-            precoFinal = p.preco - (p.preco * p.desconto / 100);
-            descontoTexto = `<span class="desconto">-${p.desconto}% OFF</span>`;
-          }
-          box.innerHTML = `
-            <h3>${p.nome} ${descontoTexto}</h3>
-            <p>${p.descricao}</p>
-            <p><strong>Preço:</strong> R$ ${precoFinal.toFixed(2)}</p>
-            <a href="${p.linkPagamento}" target="_blank">Comprar agora</a> |
-            <a href="${p.linkDownload}" target="_blank">Download App</a>
+        produtosDoGrupo.forEach(produto => {
+          const card = document.createElement("div");
+          card.className = "produto";
+          const precoOriginal = produto.desconto ? `<span class="preco-original">R$ ${(produto.preco).toFixed(2)}</span>` : "";
+          const precoComDesconto = produto.desconto ? (produto.preco * (1 - produto.desconto / 100)).toFixed(2) : produto.preco.toFixed(2);
+          const badge = produto.desconto ? `<div class="badge">${produto.desconto}% OFF</div>` : "";
+          card.innerHTML = `
+            ${badge}
+            <h3>${produto.nome}</h3>
+            <p>${produto.descricao}</p>
+            <p>${precoOriginal} <strong>R$ ${precoComDesconto}</strong></p>
+            <a class="btn" href="${produto.link_pagamento}" target="_blank">Comprar</a>
+            <a class="btn" href="${produto.link_download}" target="_blank">Download</a>
           `;
-          container.appendChild(box);
+          container.appendChild(card);
         });
-      }
-    });
+      });
   </script>
 </body>
 </html>
