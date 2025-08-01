@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Produtos</title>
-<link href="css/style.css" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -122,30 +121,29 @@
       height: 64px;
     }
   </style>
-<script src="https://cdn.tailwindcss.com"></script></head>
+</head>
 <body>
+  <header>
+    <h1>TMA IPTV PREMIUM</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="painel.html">Painel</a>
+      <a href="termos.html">Termos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
-<header class="bg-black text-white py-4">
-<div class="container mx-auto flex justify-between items-center px-4">
-<h1 class="text-2xl font-bold">TMA IPTV PREMIUM</h1>
-<nav class="space-x-4">
-<a class="hover:underline" href="index.html">Início</a>
-<a class="hover:underline" href="downloads.html">Downloads</a>
-<a class="hover:underline" href="painel.html">Painel</a>
-<a class="hover:underline" href="termos.html">Termos</a>
-<a class="hover:underline" href="contato.html">Contato</a>
-</nav>
-</div>
-</header>
+  <main id="produto-list"></main>
 
-<main id="produto-list"></main>
-<a href="https://wa.me/5535998993464" id="whatsapp-button" target="_blank">
-<img alt="WhatsApp" onerror="this.style.display='none';" src="assets/whatsapp-icon.png"/>
-</a>
-<a href="https://imperioxcc.top/chatbot/check/?k=47e8091700" id="chatbot-button" target="_blank">
-<img alt="Chatbot" onerror="this.style.display='none';" src="assets/chatbot.png"/>
-</a>
-<script>
+  <a id="whatsapp-button" href="https://wa.me/5535998993464" target="_blank">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
+  </a>
+  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank">
+    <img src="assets/chatbot.png" alt="Chatbot" onerror="this.style.display='none';" />
+  </a>
+
+  <script>
     const params = new URLSearchParams(window.location.search);
     const grupoId = params.get("grupo");
 
