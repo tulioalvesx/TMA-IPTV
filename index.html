@@ -41,7 +41,6 @@
   <div id="chatbot"></div>
 
   <script>
-    // Corrige carregamento dos grupos de produtos
     fetch('grupos.json')
       .then(response => response.json())
       .then(data => {
@@ -49,7 +48,9 @@
         data.forEach(group => {
           const card = document.createElement('div');
           card.className = 'product-group';
+          const imageName = group.id.toLowerCase() + '.jpg';
           card.innerHTML = `
+            <img src="assets/${imageName}" alt="${group.nome}" style="max-width: 100%; height: auto; margin-bottom: 10px;" onerror="this.style.display='none';" />
             <h2>${group.nome}</h2>
             <a href="produto.html?grupo=${encodeURIComponent(group.id)}" class="btn">Ver detalhes</a>
           `;
@@ -60,7 +61,6 @@
         console.error('Erro ao carregar grupos:', error);
       });
 
-    // Chatbot com fallback para não mostrar erro na tela
     fetch("https://imperioxcc.top/chatbot/check/?k=47e8091700")
       .then(r => r.json())
       .then(d => {
@@ -68,9 +68,7 @@
           document.getElementById("chatbot").innerHTML = '<div class="chatbot-bubble">Precisa de ajuda? Clique aqui.</div>';
         }
       })
-      .catch(() => {
-        // Silencia erro
-      });
+      .catch(() => {});
   </script>
 </body>
 </html>
