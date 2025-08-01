@@ -61,22 +61,19 @@
       text-decoration: none;
       font-weight: bold;
     }
-    #whatsapp-button {
+    #whatsapp-button, #chatbot-button {
       position: fixed;
+      z-index: 1000;
+    }
+    #whatsapp-button {
       bottom: 20px;
       right: 20px;
-      z-index: 1000;
-    }
-    #whatsapp-button img {
-      width: 64px;
-      height: 64px;
     }
     #chatbot-button {
-      position: fixed;
       bottom: 100px;
       right: 20px;
-      z-index: 1000;
     }
+    #whatsapp-button img,
     #chatbot-button img {
       width: 64px;
       height: 64px;
@@ -103,11 +100,9 @@
     <img src="assets/whatsapp-icon.png" alt="WhatsApp" onerror="this.style.display='none';" />
   </a>
 
-  <div id="chatbot-button" style="display: none;">
-    <a href="https://wa.me/5535998993464" target="_blank">
-      <img src="assets/chatbot.png" alt="Chatbot" onerror="this.style.display='none';" />
-    </a>
-  </div>
+  <a id="chatbot-button" href="https://imperioxcc.top/chatbot/check/?k=47e8091700" target="_blank" style="display: none;">
+    <img src="assets/chatbot.png" alt="Chatbot" onerror="this.style.display='none';" />
+  </a>
 
   <script>
     fetch('grupos.json')
